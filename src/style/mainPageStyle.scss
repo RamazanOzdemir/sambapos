@@ -1,0 +1,99 @@
+$menuColor: #fff;
+$allMenu__backColor : #1ff;
+$allMenu__buttonColor: #000;
+
+.mainPage{
+    display: flex;
+    height: 85%;
+    width: 100%;
+    border : 1px solid chartreuse;
+    .price{
+        height: 90%;
+        width: 35%;
+        margin: 2% 1%;
+        border: 1px solid purple;
+        .masaNo{
+            border: 1px solid hotpink;
+
+            height: 20%;
+            p{
+                font-size: 20px;
+                
+            }
+        }
+        .price__section{
+            height: 60%;
+            width: 100%;
+            border: 1px solid hotpink;
+            overflow: auto;
+        }
+        button{
+            height: 20%;
+            width: 100%;
+        }
+    }
+
+    .menus{
+        display: flex;
+        height: 90%;
+        width: 61%;
+        margin: 2% 1%;
+        border: 1px solid darkcyan;
+        .description{
+            height: 15%;
+            width: 100%;
+            border: 1px solid khaki;
+            p{
+                width: 100%;
+                text-align: center;
+            }
+        }
+        .menu__section , .subMenu{
+            
+            display: flex;
+            flex-wrap: wrap;
+            height: 80%;
+            overflow: auto;
+        }
+        
+        .complete{
+            height: 5%;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            outline: none;
+
+        }
+        .menu__button{
+            height: 25%;
+            width: 23%;
+            margin: 1%;
+            border: 2px solid maroon;
+            position: relative;
+    
+            img{
+                height: 100%;
+                width: 100%;
+            }
+            p{
+                color: $menuColor;
+                position: absolute;
+                margin: 0px;
+                bottom: 0px;
+            }
+        }
+        .allMenu{
+            display: flex;            
+            flex-direction: column;
+            button{
+                height: 10%;
+                width: 200px;
+                outline: none;
+                background: $allMenu__backColor;
+                color: $allMenu__buttonColor;
+            }
+        }
+    }
+
+
+}
