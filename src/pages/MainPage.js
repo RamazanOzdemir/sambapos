@@ -31,9 +31,7 @@ const MainPage = () => {
                 <button>ÖDEME YAP</button>
             </div>
             <div className='menus'>
-                <AllMenu/>
                 <MenuSection/>                
-
             </div>
         </div>
     )
