@@ -1,35 +1,59 @@
 $menuColor: #fff;
 $allMenu__backColor : #1ff;
 $allMenu__buttonColor: #000;
+$price__buttonSize: 36px;
+$price__buttonColor: #fff;
+$price__buttonBackColor: rgb(12, 237, 245);
+$description__size: 36px;
+$description__backColor: #ddd;
 
 .mainPage{
     display: flex;
     height: 85%;
     width: 100%;
-    border : 1px solid chartreuse;
+    background-image: url('../background.jpg');
+    background-size: 400px;
+    padding: 0px;
+    margin: 0px;
     .price{
         height: 90%;
         width: 35%;
-        margin: 2% 1%;
-        border: 1px solid purple;
-        .masaNo{
-            border: 1px solid hotpink;
+        margin: 1.5% 1%;
+        .price__section{
+            height: 84%;
+            width: 100%;
+            border: 1px solid darkgoldenrod;
+            overflow: auto;
+            background-color: #ddd;
+            border-radius: 50px;
+            .order{
+                display: flex;
+                justify-content: space-between;
+                padding: 15px 20px ;
+                border-width: 0 0 2px 0;
+                border-style: solid;
+                border-color: #1ff;
+                b{
+                    font-size: 22px;
+                }
+                span{
+                    display: flex;
+                    align-items: flex-end;
+                    font-size: 24px;
+                }
 
-            height: 20%;
-            p{
-                font-size: 20px;
-                
             }
         }
-        .price__section{
-            height: 60%;
-            width: 100%;
-            border: 1px solid hotpink;
-            overflow: auto;
-        }
         button{
-            height: 20%;
+            height: 15%;
             width: 100%;
+            margin-top: 1%;;
+            font-size: $price__buttonSize;
+            color: $price__buttonColor;
+            background: $price__buttonBackColor;
+            border-radius: 50px;
+            outline: none;
+            cursor: pointer;
         }
     }
 
@@ -37,63 +61,106 @@ $allMenu__buttonColor: #000;
         display: flex;
         height: 90%;
         width: 61%;
-        margin: 2% 1%;
-        border: 1px solid darkcyan;
-        .description{
-            height: 15%;
-            width: 100%;
-            border: 1px solid khaki;
-            p{
+        margin: 1.5% 1%;
+        .menu__select{
+
+            width: 80%;
+            .description{
+                display: flex;
+                align-items: center;
+                height: 15%;
+                width: 100%;
+                border-radius: 100px;
+                font-size: $description__size;
+                background: $description__backColor;
+                p{
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            .menu__section , .subMenu{
+                display: flex;
+                flex-wrap: wrap;
+                height: 85%;
+                overflow: auto;
+            }
+            .subMenu{
+                height: 100%;
+            }
+            .complete{
+                height: 5%;
                 width: 100%;
                 text-align: center;
-            }
-        }
-        .menu__section , .subMenu{
-            
-            display: flex;
-            flex-wrap: wrap;
-            height: 80%;
-            overflow: auto;
-        }
-        
-        .complete{
-            height: 5%;
-            width: 100%;
-            text-align: center;
-            font-size: 18px;
-            outline: none;
-
-        }
-        .menu__button{
-            height: 25%;
-            width: 23%;
-            margin: 1%;
-            border: 2px solid maroon;
-            position: relative;
+                font-size: 18px;
+                outline: none;
     
-            img{
-                height: 100%;
-                width: 100%;
             }
-            p{
-                color: $menuColor;
-                position: absolute;
-                margin: 0px;
-                bottom: 0px;
+            .menu__button{
+                height: 26%;
+                width: 30%;
+                margin: 16px 1.5%;
+                border: 2px solid maroon;
+                position: relative;
+                cursor: pointer;
+                img{
+                    height: 100%;
+                    width: 100%;
+                }
+                p{
+                    color: $menuColor;
+                    position: absolute;
+                    margin: 0px;
+                    bottom: 0px;
+                }
+                span{
+                    font-weight: bolder;
+                    font-size: 16;
+                }
             }
         }
+
         .allMenu{
             display: flex;            
             flex-direction: column;
+            width: 20%;
             button{
-                height: 10%;
-                width: 200px;
+                height: 8%;
+                margin: 3px 0;
+                width: 100%;
                 outline: none;
                 background: $allMenu__backColor;
                 color: $allMenu__buttonColor;
+                border-radius: 50px;
+                cursor: pointer;
             }
         }
     }
 
 
+}
+@media (max-width:720px){
+    .app{
+        height: 100%;
+    }
+    .mainPage{
+        flex-direction: column-reverse;
+        .price, .menus{
+            width: 80%;
+            margin: 50px 10%;
+        }
+        .price{
+            height: 500px;
+        }
+        .menus{
+            height: 70vh;
+            .menu__select{
+                width: 100%;
+            }
+            .allMenu{
+                display: none;
+            }
+        }
+
+
+    }
 }

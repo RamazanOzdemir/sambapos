@@ -9,26 +9,26 @@ const MainPage = () => {
     return (
         <div className='mainPage'>
             <div className='price'>
-                <div className ='masaNo'>
-                    <p>Masa No: </p>
-                </div>
                 <div className='price__section'>
                   <ul>
                       {
-                          order.map(item=>(
-                              <li>{item.name} <strong>{item.price}</strong>
-                                <ul>
-                                    {
-                                        item.subMenu.map(sub=>(<li>{sub}</li>))
-                                } 
-                                </ul>                              
-                              </li>
-
+                          order.map((item,index)=>(
+                              <div className='order' key={item.name+item.price+index}>
+                                    <li>
+                                        <b>{item.name} </b>
+                                        <ul>
+                                            {
+                                                item.subMenu.map((sub,ind)=>(sub?<li key={sub+item.name+item.price+ind}>{sub}</li>:null))
+                                            } 
+                                        </ul>                              
+                                    </li>
+                                    <span><strong>{item.price +' \u20BA'}</strong>{}</span>
+                              </div>
                           ))
                       }
                   </ul>
                 </div>
-                <button>Ücret Alındı</button>
+                <button>ÖDEME YAP</button>
             </div>
             <div className='menus'>
                 <AllMenu/>

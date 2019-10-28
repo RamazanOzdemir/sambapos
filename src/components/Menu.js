@@ -1,12 +1,12 @@
 import React,{useContext} from 'react';
 import { MenuContext } from '../context/MenuContext';
 
-const selectMenu = (menu,setSelected,setMenu,totalPrice,setTotalPrice,resetMenu,selectSubMenu,setSubMenu,order,setOrder)=>{
+const selectMenu = (menu,ctx)=>{
+    const {setSelected,setMenu,totalPrice,setTotalPrice,setSubMenu,order,setOrder} = ctx;
     const {price,name,subMenus} = menu;
-    console.log(menu)
     if(subMenus !== undefined){
         setSubMenu(subMenus);
-        const newPrice = {...totalPrice,name:menu.name,price:price}
+        const newPrice = {...totalPrice,name:menu.name,price:price,subMenu:[]}
         setTotalPrice(newPrice);
     }else{
         setMenu([menu]);
@@ -14,7 +14,7 @@ const selectMenu = (menu,setSelected,setMenu,totalPrice,setTotalPrice,resetMenu,
 
     }
     if(menu.price !== undefined && subMenus === undefined){
-        const newPrice = {...totalPrice,name:menu.name,price:price,subMenus:[]}
+        const newPrice = {...totalPrice,name:menu.name,price:price,subMenu:[]}
         setTotalPrice(newPrice);
         const newOrder = [...order,newPrice];
         setOrder(newOrder);
@@ -27,12 +27,13 @@ const selectMenu = (menu,setSelected,setMenu,totalPrice,setTotalPrice,resetMenu,
         
 };
 const  Menu = (props) => {
-    const { setMenu,setSelected,totalPrice,setTotalPrice,resetMenu,setSubMenu,selectSubMenu,order,setOrder} = useContext(MenuContext);
+    const ctx = useContext(MenuContext);
     const {menu} = props;
     return (
-        <div className='menu__button' onClick={selectMenu.bind(this,menu,setSelected,setMenu,totalPrice,setTotalPrice,resetMenu,selectSubMenu,setSubMenu,order,setOrder)}>
-            <img src={menu.image}/>
+        <div className='menu__button' onClick={selectMenu.bind(this,menu,ctx)}>
+            <img src={menu.image} alt={menu.name}/>
             <p>{menu.name}</p>
+            <span>{menu.price}</span>
         </div>
     )
 }

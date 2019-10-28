@@ -2,7 +2,6 @@ $navbarBackGround:#555;
 $menuLinkWidth: 40%;
 $menuLinkColor: #fff;
 $menuLinkColor--Active: #000;
-$menuLinkBackG--Active: #eee;
 
 
 .navbar{
@@ -10,36 +9,12 @@ $menuLinkBackG--Active: #eee;
     width: 100%;
     height: 15%;
     background: $navbarBackGround;
-    .menu{
-        display: flex;
-        width: 50%;
-        height: 100%;
-    }
-    .menu__link{
-        display: flex;
-        text-align: center;
-        width: $menuLinkWidth;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        a{
-            color: $menuLinkColor; 
-            text-decoration: none;
-            font-size: 36px;
-        }
-    }
-    .active{
-        a{
-        color: $menuLinkColor--Active;
-        }
-        background: $menuLinkBackG--Active;
-    }
+    justify-content: center;
+    align-items: center;
     .logo{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 99%;
         img{
-            height: 90%;
+            height: 100%;
             width: auto;
         }
     }

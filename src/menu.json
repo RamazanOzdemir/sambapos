@@ -1180,8 +1180,8 @@
 				{
 					"name": null,
 					"caption": "Tatlı İstemiyorum",
-					"image": "./images/istemiyorum.jpg",
-					"price": 72
+					"image": "./images/istemiyorum.jpg"
+					
 				}
 			]
 		},
